@@ -8,28 +8,28 @@ import { Menu, MenuItem, HoveredLink, ProductItem } from './ui/navbar-menu'
 export default function Header() {
     const [active, setActive] = useState<string | null>(null)
     return (
-        <header className='w-full absolute z-10 h-auto flex items-center justify-center p-4 '>
-            <nav className='w-fit'>
+        <header className='w-full absolute z-40 h-auto flex items-center font-mono justify-center p-4 '>
+            <nav className='w-auto'>
                 <Menu setActive={setActive} >
                     <MenuItem setActive={setActive} active={active} item="Home" >
-                        <HoveredLink href="/">Home</HoveredLink>
+                        <HoveredLink href="/">Go to homepage</HoveredLink>
                     </MenuItem>
                     <MenuItem setActive={setActive} active={active} item="About" >
-                        <HoveredLink href="/">About</HoveredLink>
+                        <HoveredLink href="/">Find out who I am</HoveredLink>
                     </MenuItem>
                     <MenuItem setActive={setActive} active={active} item="Portofolio" >
-                        <HoveredLink href="/">
+                            <div className="grid grid-cols-2 gap-10 p-4">
                             <ProductItem title={'Gamers Lobby'} description={'A place where gamers can mark their favorite games'} href={'/'} src={GamersLobby} />
                             <ProductItem title={'Calculator App'} description={'A simple and easy-to-use calculator'} href={'/'} src={Calculator} />
                             <ProductItem title={'Weather App'} description={'Get the latest weather updates from every city of the world'} href={'/'} src={Weather_App} />
                             <ProductItem title={'World Wide Lens'} description={'Stay informed with the latest news from around the world'} href={'/'} src={World_Wide_Lens} />
-                        </HoveredLink>
+                            </div>
                     </MenuItem>
                     <MenuItem setActive={setActive} active={active} item="Resume" >
-                        <HoveredLink href="/">Resume</HoveredLink>
+                        <HoveredLink href="/">Download My Resume</HoveredLink>
                     </MenuItem>
                     <MenuItem setActive={setActive} active={active} item="Contact" >
-                        <HoveredLink href="/">Contact</HoveredLink>
+                        <HoveredLink href="/">Send me a message</HoveredLink>
                     </MenuItem>
                 </Menu>
             </nav>
