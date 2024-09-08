@@ -20,6 +20,10 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      boxShadow: {
+        'glow': "0 0px 20px rgba(255,255, 255, 0.35)",
+        'glow-sm': "0 0px 10px rgba(255,255, 255, 0.35)",
+      },
     },
   },
   plugins: [
@@ -47,6 +51,7 @@ const config: Config = {
         { values: flattenColorPalette(theme("backgroundColor")), type: "color" }
       );
     },
+    require('tailwind-scrollbar'),
   ],
 };
 export default config;

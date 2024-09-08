@@ -16,7 +16,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" className="dark scrollbar-thin overflow-y-scroll scrollbar-thumb-black scrollbar-track-black ">
       <body className={inter.className}>
         <Header/>
         {children}

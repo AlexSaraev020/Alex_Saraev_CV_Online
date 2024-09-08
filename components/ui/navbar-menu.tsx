@@ -15,17 +15,19 @@ const transition = {
 
 export const MenuItem = ({
     setActive,
+    scrollTo,
     active,
     item,
     children,
 }: {
+    scrollTo?: () => void;
     setActive: (item: string) => void;
     active: string | null;
     item: string;
     children?: React.ReactNode;
 }) => {
     return (
-        <div onMouseEnter={() => setActive(item)} className="relative ">
+        <div onMouseEnter={() => setActive(item)} className="relative" onClick={scrollTo}>
             <motion.p
                 transition={{ duration: 0.3 }}
                 className="cursor-pointer text-black hover:opacity-[0.9] dark:text-white"
@@ -111,11 +113,11 @@ export const ProductItem = ({
 
 export const HoveredLink = ({ children, ...rest }: any) => {
     return (
-        <Link
+        <a
             {...rest}
             className="text-neutral-700 dark:text-neutral-200 hover:text-black "
         >
             {children}
-        </Link>
+        </a>
     );
 };
