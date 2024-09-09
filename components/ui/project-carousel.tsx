@@ -81,7 +81,9 @@ export default function ProjectCarousel() {
                         {currentProject.note && <p className='text-sm md:text-lg pt-4 md:pt-0 md:p-4 w-10/12 font-extrabold text-emerald-500'>{currentProject.note}</p>}
                         <ul className='w-fit gap-2 grid grid-cols-2 md:p-4 py-8 md:py-0'>
                             {currentProject.technologies ? (currentProject.technologies.map((technology , index) => (
-                                <MagicCard key={index} children={technology} />
+                                <MagicCard key={index}  >
+                                    {technology}
+                                </MagicCard>
                             ))
                             ) : (
                                 <div>No technologies</div>
