@@ -24,12 +24,13 @@ export default function ScrollToTopButton() {
     return (
         <>
             {visible &&
-                <button onClick={scrollToTop} className='fixed bottom-4 right-4 p-1 flex items-center justify-center animate-bounce bg-transparen border-2 border-zinc-200 shadow-glow-sm shadow-white rounded-full'>
+                <button onClick={scrollToTop} className='fixed bottom-4 right-4 md:right-1 p-1 flex items-center justify-center animate-bounce bg-transparen border-2 border-zinc-200 shadow-glow-sm shadow-white rounded-full'>
                     <Image
                         src={ScrollTop}
                         alt='Scroll to top'
                         width={50}
                         height={50}
+                        className='w-8 h-8 md:w-12 md:h-12'
                     />
                 </button>
             }

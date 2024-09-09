@@ -1,18 +1,16 @@
 import { SparklesCore } from "@/components/ui/sparkles";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
-import { TracingBeam } from "@/components/ui/tracing-beam";
-import { LampContainer, LampDemo } from "@/components/ui/lamp";
+import BlurIn from "@/components/ui/blur-in";
 import AboutMe from "@/components/ui/about-me";
-import { GridBackgroundDemo } from "@/components/ui/grid-background";
+import { Projects } from "@/components/ui/projects";
 import ScrollToTopButton from "@/components/ui/scroll-to-top";
+import Particles from "@/components/ui/particles";
 export default function Home() {
- 
+
   return (
     <main className="w-full font-mono flex flex-col min-h-screen items-center justify-center bg-black">
-      <div id="#home" className="flex flex-col w-full h-screen items-center justify-center">
-        <h1 className="md:text-7xl text-3xl font-bold text-center text-white relative z-20">
-          Alex Saraev
-        </h1>
+      <div id="#home" className="flex relative flex-col w-full min-h-screen items-center justify-center">
+        <BlurIn className="md:text-7xl text-4xl font-bold text-center text-white" word="Alex Saraev" />
         <TextGenerateEffect className="w-full text-center" words={"Web developer passionate about building modern websites."} />
         <div className="w-8/12 h-fit flex flex-col justify-center items-center relative">
           {/* Gradients */}
@@ -32,16 +30,11 @@ export default function Home() {
           <div className="absolute inset-0 w-full h-full bg-black [mask-image:radial-gradient(600px_300px_at_top,transparent_20%,white)]"></div>
         </div>
       </div>
-      <div id="#about-me" className="w-full h-screen">
-        <LampContainer className="w-full h-screen pt-80">
-          <div className="w-11/12 h-full flex flex-col items-center justify-center space-y-4 pb-60">
-            <AboutMe />
-          </div>
-        </LampContainer>
+      <div id="#about-me" className="w-11/12 relative my-40 md:w-11/12 xl:w-9/12 h-screen flex items-center justify-center">
+        <AboutMe />
+        <Particles className="w-full absolute inset-0"/>
       </div>
-
-      <GridBackgroundDemo />
-
+      <Projects />
       <ScrollToTopButton />
     </main>
   );

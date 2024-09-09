@@ -28,6 +28,7 @@ import WorldWideLens3 from '@/public/images/projects/world_wide_lens/3.webp'
 import WorldWideLens4 from '@/public/images/projects/world_wide_lens/4.webp'
 import GithubImage from '@/public/images/projects/github.webp'
 import { useState } from 'react'
+import { MagicCard } from './magic-card';
 export default function ProjectCarousel() {
     const [activeIndex, setActiveIndex] = useState(1);
     const projects = [
@@ -36,6 +37,8 @@ export default function ProjectCarousel() {
             title: 'Gamers Lobby',
             description: 'A simple and intuitive platform for gamers to search for their favorite games and easily add them to a personalized favorites list. With a straightforward interface, users can quickly find and bookmark the games they love, keeping all their top picks organized in one convenient place. This tool focuses on enhancing your gaming experience by making it easy to manage your favorite titles without any unnecessary complexity.',
             technologies: ['React', 'Typescript', 'Node.Js', 'Express.Js', 'Tailwind CSS', 'MongoDB'],
+            github: 'https://github.com/AlexSaraev020/MERN_Steam_App',
+            live: 'https://gamerslobby.vercel.app/',
             note: 'Note: When you first time access the website, you need to make any request (you can just press on the "Guest" button), and wait about 1 minute for the backend server to start.',
             images: [GamersLobby1, GamersLobby2, GamersLobby3, GamersLobby4, GamersLobby5, GamersLobby6, GamersLobby7, GamersLobby8, GamersLobby9]
         },
@@ -44,6 +47,8 @@ export default function ProjectCarousel() {
             title: 'Calculator App',
             description: 'A simple and easy-to-use calculator designed for quick and efficient calculations. Whether you are performing basic arithmetic or more advanced operations, this calculator offers a clean and intuitive interface that minimizes distractions and maximizes productivity. With responsive controls and a straightforward layout, users of all skill levels can seamlessly navigate through functions, making it ideal for both everyday use and educational purposes. Its lightweight design ensures fast performance without unnecessary features, focusing solely on delivering accurate results in a user-friendly manner.',
             technologies: ['React', 'Typescript', 'Tailwind CSS'],
+            github: 'https://github.com/AlexSaraev020/Calculator_App',
+            live: 'https://calculator-app-coral-eight.vercel.app/',
             images: [Calculator1, Calculator2, Calculator3, Calculator4, Calculator5]
         },
         {
@@ -51,6 +56,8 @@ export default function ProjectCarousel() {
             title: 'Weather App',
             description: 'Stay informed with real-time weather updates from cities across the globe. Whether you are planning a trip, tracking local weather conditions, or simply curious about the forecast in a distant city, this service provides accurate and up-to-date information at your fingertips. With global coverage, you can easily search for any city and get detailed weather insights, including temperature, humidity, wind speed, and more. Keep ahead of changing conditions and make informed decisions with timely and reliable weather updates, no matter where you are in the world.',
             technologies: ['React', 'Typescript', 'Tailwind CSS'],
+            github: 'https://github.com/AlexSaraev020/Weather_App',
+            live: 'https://weather-app-seven-sandy.vercel.app/',
             images: [WeatherApp1, WeatherApp2, WeatherApp3, WeatherApp4, WeatherApp5]
         },
         {
@@ -58,6 +65,8 @@ export default function ProjectCarousel() {
             title: 'World Wide Lens',
             description: 'Stay informed with the latest news from around the world with an easy-to-use app. Simply search for news stories and read them directly within the app. Whether you are interested in global events or specific topics, the platform offers a straightforward way to access and stay updated on current news.',
             technologies: ['Next JS', 'Typescript', 'Tailwind CSS'],
+            github: 'https://github.com/AlexSaraev020/World_Wide_Lens',
+            live: 'https://world-wide-lens.vercel.app/',
             images: [WorldWideLens1, WorldWideLens2, WorldWideLens3, WorldWideLens4]
         }
     ]
@@ -65,15 +74,14 @@ export default function ProjectCarousel() {
     return (
         <section className='w-full text-white flex'>
             {currentProject ? (
-                <div key={currentProject.id} className='w-full flex flex-col lg:flex-row px-20 py-10'>
+                <div key={currentProject.id} className='w-full flex flex-col lg:flex-row px-4 md:px-20 py-10'>
                     <div className='w-full lg:w-6/12'>
-                        <h1 className='text-6xl font-bold'>{currentProject.title}</h1>
-                        <p className='text-lg p-4 w-10/12'>{currentProject.description}</p>
-                        {currentProject.note && <p className='text-lg p-4 w-10/12 font-extrabold text-emerald-500'>{currentProject.note}</p>}
-                        <h2 className='text-xl font-bold p-4'>Technologies used :</h2>
-                        <ul className='w-full gap-2 flex flex-wrap lg:flex-col p-4'>
-                            {currentProject.technologies ? (currentProject.technologies.map((technology, index) => (
-                                <li key={index} className='text-lg'>{technology}</li>
+                        <h1 className=' text-3xl md:text-6xl font-bold'>{currentProject.title}</h1>
+                        <p className='text-sm md:text-lg md:p-4 pt-4 md:pt-0 md:w-10/12'>{currentProject.description}</p>
+                        {currentProject.note && <p className='text-sm md:text-lg pt-4 md:pt-0 md:p-4 w-10/12 font-extrabold text-emerald-500'>{currentProject.note}</p>}
+                        <ul className='w-fit gap-2 grid grid-cols-2 md:p-4 py-8 md:py-0'>
+                            {currentProject.technologies ? (currentProject.technologies.map((technology , index) => (
+                                <MagicCard key={index} children={technology} />
                             ))
                             ) : (
                                 <div>No technologies</div>
@@ -103,31 +111,35 @@ export default function ProjectCarousel() {
                         ) : (
                             <div>No images</div>
                         )}
+                        <div className='flex gap-8 text-2xl'>
+                            <a className='border-2 bg-zinc-900 hover:shadow-glow hover:shadow-zinc-400 hover:scale-110 transition-all duration-500 z-10 border-zinc-500 rounded-xl px-4 py-2' href={currentProject.github} target='_blank'>Github</a>
+                            <a className='border-2 bg-zinc-900 hover:shadow-glow hover:shadow-zinc-400 hover:scale-110 transition-all duration-500 z-10 border-zinc-500 rounded-xl px-4 py-2' href={currentProject.live} target='_blank'>Preview</a>
+                        </div>
                         <div className='w-full flex flex-col'>
                             <h2 className='text-xl font-bold p-4'>All Projects:</h2>
                             <div className='overflow-x-scroll py-4 scrollbar-thin scrollbar-thumb-zinc-600 scrollbar-track-transparent'>
                                 <div className='flex gap-4 min-w-max'>
                                     {projects.map((project) => (
-                                        <div className='flex flex-col relative' key={project.id}>
+                                        <div className='flex flex-col relative border-2 border-zinc-500 rounded-xl shadow-glow-sm hover:shadow-white transition-all duration-500' key={project.id}>
                                             <Image
                                                 width={300}
                                                 height={225}
                                                 src={project.images[0]}
                                                 alt={project.title}
-                                                className='rounded-xl'
+                                                className='rounded-xl w-60 md:w-80'
                                             />
                                             <button onClick={() => setActiveIndex(project.id)} className='absolute inset-0 bottom-0 left-0 bg-black/10 flex items-end justify-center w-full text-white text-center'>
                                                 {project.title}
                                             </button>
                                         </div>
                                     ))}
-                                    <div className='flex flex-col relative'>
+                                    <div className='flex flex-col relative border-2 border-zinc-500 rounded-xl shadow-glow-sm hover:shadow-white transition-all duration-500'>
                                         <Image
                                             width={300}
                                             height={225}
                                             src={GithubImage}
                                             alt={'Github'}
-                                            className='rounded-xl'
+                                            className='rounded-xl w-60 md:w-80'
                                         />
                                         <a
                                             href='https://github.com/AlexSaraev020?tab=repositories'

@@ -13,9 +13,20 @@ import GithubIcont from '@/public/icons/github-142-svgrepo-com.svg'
 
 
 export default function AboutMe() {
+    const skills = [
+        { id: 1, name: 'React', icon: ReactIcon },
+        { id: 2, name: 'Next.js', icon: NextIcon },
+        { id: 3, name: 'Tailwind', icon: TailwindIcon },
+        { id: 4, name: 'Javascript', icon: JavascriptIcon },
+        { id: 5, name: 'Node.js', icon: NodeIcon },
+        { id: 6, name: 'Typescript', icon: TypescripIcon },
+        { id: 7, name: 'HTML', icon: HtmlIcon },
+        { id: 8, name: 'CSS', icon: CssIcon },
+        { id: 9, name: 'MongoDB', icon: MongoIcon, className: 'col-span-2 md:col-span-1' },
+    ]
     return (
-        <div className="w-full max-w-6xl mx-auto py-12 md:py-16 text-white">
-            <div className="grid gap-8 md:grid-cols-2">
+        <div className="w-full mx-auto py-12 md:py-16 text-white">
+            <div className="grid gap-8 grid-cols-1 lg:grid-cols-2 place-content-center">
                 <div className="space-y-4">
                     <div className="space-y-2">
                         <h1 className="text-3xl font-bold text-sky-500">Alex Saraev</h1>
@@ -36,43 +47,13 @@ export default function AboutMe() {
                 </div>
                 <div className="space-y-4">
                     <h2 className="text-xl font-bold">Skills</h2>
-                    <div className="grid grid-cols-3 gap-4">
-                        <div className="bg-zinc-800 rounded-md p-4 flex items-center gap-1">
-                            <Image src={ReactIcon} alt={'React'} width={24} height={24} />
-                            <span>React</span>
-                        </div>
-                        <div className="bg-zinc-800 rounded-md p-4 flex items-center gap-1">
-                            <Image src={NextIcon} alt={'NextJs'} width={24} height={24} />
-                            <span>Next JS</span>
-                        </div>
-                        <div className="bg-zinc-800 rounded-md p-4 flex items-center gap-1">
-                            <Image src={NodeIcon} alt={'Node JS'} width={24} height={24} />
-                            <span>Node JS</span>
-                        </div>
-                        <div className="bg-zinc-800 rounded-md p-4 flex items-center gap-1">
-                            <Image src={JavascriptIcon} alt={'Javascript'} width={24} height={24} />
-                            <span>Javascript</span>
-                        </div>
-                        <div className="bg-zinc-800 rounded-md p-4 flex items-center gap-1">
-                            <Image src={TypescripIcon} alt={'Typescript'} width={24} height={24} />
-                            <span>Typescript</span>
-                        </div>
-                        <div className="bg-zinc-800 rounded-md p-4 flex items-center gap-1">
-                            <Image src={MongoIcon} alt={'MongoDB'} width={24} height={24} />
-                            <span>MongoDB</span>
-                        </div>
-                        <div className="bg-zinc-800 rounded-md p-4 flex items-center gap-1">
-                            <Image src={CssIcon} alt={'Css'} width={24} height={24} />
-                            <span>CSS</span>
-                        </div>
-                        <div className="bg-zinc-800 rounded-md p-4 flex items-center gap-1">
-                            <Image src={TailwindIcon} alt={'Tailwind'} width={24} height={24} />
-                            <span>Tailwind CSS</span>
-                        </div>
-                        <div className="bg-zinc-800 rounded-md p-4 flex items-center gap-1">
-                            <Image src={HtmlIcon} alt={'HTML'} width={24} height={24} />
-                            <span>HTML</span>
-                        </div>
+                    <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                        {skills.map((skill) => (
+                            <div key={skill.id} className={`bg-zinc-800 rounded-md p-4 flex items-center gap-1 + ${skill.className}`}>
+                                <Image src={skill.icon} alt={skill.name} width={24} height={24} />
+                                <span>{skill.name}</span>
+                            </div>
+                        ))}
                     </div>
                 </div>
             </div>
