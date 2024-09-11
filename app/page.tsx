@@ -32,7 +32,7 @@ export default function Home() {
       </div>
       <div id="#about-me" className="w-11/12 relative my-40 md:w-11/12 xl:w-9/12 h-screen flex items-center justify-center">
         <AboutMe />
-        <Particles className="w-full absolute inset-0"/>
+        <Particles className="w-full z-0 absolute inset-0"/>
       </div>
       <Projects />
       <ScrollToTopButton />

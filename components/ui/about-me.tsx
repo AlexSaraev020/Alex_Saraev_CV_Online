@@ -25,7 +25,7 @@ export default function AboutMe() {
         { id: 9, name: 'MongoDB', icon: MongoIcon, className: 'col-span-2 md:col-span-1' },
     ]
     return (
-        <div className="w-full mx-auto py-12 md:py-16 text-white">
+        <div className="w-full mx-auto py-12 md:py-16 text-white z-10">
             <div className="grid gap-8 grid-cols-1 lg:grid-cols-2 place-content-center">
                 <div className="space-y-4">
                     <div className="space-y-2">

@@ -44,9 +44,7 @@ export default function Header() {
                             <ProductItem title={'World Wide Lens'} description={'Stay informed with the latest news from around the world'} href={'/'} src={World_Wide_Lens} />
                         </div>
                     </MenuItem>
-                    <MenuItem setActive={setActive} active={active} item="Resume" >
-                        <HoveredLink >Download My Resume - Coming Soon</HoveredLink>
-                    </MenuItem>
+                        <HoveredLink href={'/download/AlexSaraevResume.pdf'} download >Download My Resume</HoveredLink>
                     <MenuItem click={() => scrollTo('#social')} setActive={setActive} active={active} item="Social" >
                         <HoveredLink >Contact Me</HoveredLink>
                     </MenuItem>
