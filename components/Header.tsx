@@ -1,7 +1,7 @@
 "use client";
 import GamersLobby from "@/public/images/projects/gamers_lobby/1.webp";
 import Calculator from "@/public/images/projects/calculator/1.webp";
-import WeVibe from "@/public/images/projects/wevibe/1.webp";
+import WeVibe from "@/public/images/projects/weVibe/1.webp";
 import Weather_App from "@/public/images/projects/weather_app/1.webp";
 import World_Wide_Lens from "@/public/images/projects/world_wide_lens/1.webp";
 import React, { useEffect, useState } from "react";
