@@ -30,7 +30,7 @@ export default function AboutMe() {
                 <div className="space-y-4">
                     <div className="space-y-2">
                         <h1 className="text-3xl font-bold text-sky-500">Alex Saraev</h1>
-                        <p className="text-muted-foreground">Web Developer</p>
+                        <p className="text-muted-foreground">Frontend web Developer</p>
                     </div>
                     <p className="text-muted-foreground">
                         I&#39;m a Web Developer with a passion for creating fast, good-looking, and easy-to-use websites.
