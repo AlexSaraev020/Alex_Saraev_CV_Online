@@ -41,7 +41,7 @@ export default function AboutMe() {
                     <div className="grid grid-cols-2 gap-4 text-muted-foreground">
                         <div className="flex items-center gap-2">
                             <Image src={GithubIcont} alt={'Github'} width={24} height={24} />
-                            <span>7+ Projects</span>
+                            <span>7 Projects</span>
                         </div>
                     </div>
                 </div>
